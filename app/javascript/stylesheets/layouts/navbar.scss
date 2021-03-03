@@ -5,11 +5,12 @@
   &__brand {
     height: 35px;
     width: 176px;
-    background-size: 114px;
+    background-size: 130px;
   }
   &__mainLogo {
+    float: left;
     background-repeat: no-repeat;
-    background-image: url("~logo.png");
+    background-image: url("~logo2.png");
   }
   &-nav {
     & > li {
