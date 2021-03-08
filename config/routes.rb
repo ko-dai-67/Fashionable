@@ -4,7 +4,12 @@ Rails.application.routes.draw do
    
   root 'posts#index'
   
-  get'/users/:id', to: 'users#show', as: "user"
+  
+  resources :users, only: [:show] do
+   member do
+   get :likes
+   end
+  end
   
   resources :posts, only: [:index, :new, :create, :show, :destroy] do
    resources :photos, only: [:create]

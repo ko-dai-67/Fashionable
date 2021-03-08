@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
      devise_parameter_sanitizer.permit(:account_update, keys: [:name])
    end
+   
+   def counts(user)
+   @count_posts = user.posts.count
+   @count_likes = user.likes.count
+   end
 end
