@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users,
    controllers: { registrations: 'registrations' }
    
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
    member do
    get :likes
+   get :followings
+   get :followers
    end
   end
   
@@ -16,4 +19,5 @@ Rails.application.routes.draw do
    resources :likes, only: [:create, :destroy]
    resources :comments, only: [:create, :destroy]
   end
+  resources :relationships, only: [:create, :destroy]
 end
