@@ -1,0 +1,17 @@
+<% users.each do |user| %>
+<div class= "col-sm-8 col-sm-2 mx-auto">
+  <div class= "card-wrap">
+   <div class= "card">
+    <div class= "card-header align-items-center d-flex">
+     <%= link_to user_path(user), class: "no-text-decoration" do %>
+      <%= image_tag avatar_url(user), class: "post-profile-icon" %>
+     <% end %>
+     <%= link_to user_path(user), class: "black-color no-text-decoration",
+      title: user.name do %>
+      <strong><%= user.name %></strong>
+     <% end %>
+    </div>
+   </div>
+  </div>
+</div>
+<% end %>
