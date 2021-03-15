@@ -51,9 +51,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-end
-
-if Rails.env.production?
+  if Rails.env.production?
     CarrierWave.configure do |config|
       config.fog_credentials = {
         # Amazon S3用の設定
@@ -63,5 +61,8 @@ if Rails.env.production?
         :aws_secret_access_key => ENV['S3_SECRET_KEY']
       }
       config.fog_directory     =  ENV['S3_BUCKET']
+  end
+  end
 end
-end
+
+
